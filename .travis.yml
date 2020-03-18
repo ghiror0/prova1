@@ -1,0 +1,14 @@
+llanguage: java
+jdk
+-
+openjdk8
+addons
+sonarcloud
+organization: ghiror0
+token
+: travis encrypt 5b2424347cea431905d241541ad9c338ace7e062
+script:
+-
+ant build
+-
+sonar scanner
