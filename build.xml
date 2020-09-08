@@ -11,6 +11,12 @@
     <path id="Hello.classpath">
         <pathelement location="bin"/>
     </path>
+    <path id="run.Hello.classpath">
+        <path refid="Hello.classpath"/>
+    </path>
+    <path id="run.HelloTravis.classpath">
+        <path refid="Hello.classpath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -48,7 +54,12 @@
     </target>
     <target name="Hello">
         <java classname="prova.Hello" failonerror="true" fork="yes">
-            <classpath refid="Hello.classpath"/>
+            <classpath refid="run.Hello.classpath"/>
+        </java>
+    </target>
+    <target name="HelloTravis">
+        <java classname="prova.HelloTravis" failonerror="true" fork="yes">
+            <classpath refid="run.HelloTravis.classpath"/>
         </java>
     </target>
 </project>
